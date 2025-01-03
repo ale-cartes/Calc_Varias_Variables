@@ -1,0 +1,244 @@
+\documentclass[letterpaper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{graphics}
+\usepackage{fancyhdr}
+\usepackage{anysize}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mdwlist}
+\usepackage{etoolbox}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{makeidx}
+\usepackage{bm}
+\thispagestyle{empty}
+
+\usepackage{amsmath,amssymb}
+%\usepackage[latin1]{inputenc}
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+\oddsidemargin -1.0cm
+\textwidth 17.4cm
+\topmargin -2.5cm
+\textheight 24cm
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}\\ \normalsize Profesor: #3\\Auxiliares: #4}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}\\ \normalsize Profesor: #3\\Auxiliares: #4}
+\newcommand{\enc}[3]{\Large \textbf{#1}\\ \normalsize #2\\ #3}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+	
+	\noindent Universidad de Chile\\ Facultad de Ciencias Físicas y Matemáticas\\Departamento de Ingeniería Matemática\\ MA2001-4 Cálculo en Varias Variables\\ 07 de Agosto de 2019
+	\begin{center}
+		\enc{Auxiliar \#1} {\textbf{Profesor:} Javier Ramírez.} {\textbf{Auxiliar:} Alejandro Silva.}
+	\end{center}
+	
+	
+
+	\vspace{-0.6cm}
+	\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+		\item[]
+
+
+\item \textbf{(Coordinada)} Consideremos $\mathcal{M}_{d\times d}(\R)$ el espacio de las matrices cuadradas de $d\times d$. Definimos
+
+%%%%%%% Opción 1 (Norma de operador o inducida)
+\begin{align*}
+\norm{\cdot} : \mathcal{M}_{d\times d}(\R)&\to\R\\
+A & \mapsto \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{Ax}_1
+\end{align*}
+
+
+
+\begin{enumerate}
+
+%%%%%%%% Opción 2 (Norma 1 matricial)
+% \begin{align*}
+% \norm{\cdot}_{\mathcal{M}} : \mathcal{M}_{n\times n}(\R)&\to\R\\
+% A & \mapsto \max_{j=1,...,n}\left(\sum_{i=1}^n\vabs{a_{ij}}\right)
+% \end{align*}
+
+
+
+
+\item Muestre que $\norm{\cdot}$ es una norma en $\mathcal{M}_{d\times d}$.
+\item Muestre que para toda matriz $A\in\mathcal{M}_{d\times d}$ y para todo vector $x\in \R^d$ se cumple que:
+\[\norm{Ax}_{1}\leq \norm{A}\norm{x}_1\]
+\item Pruebe que para todo par de matrices $A,B\in\mathcal{M}_{d \times d}$ se tiene que
+\[\norm{A\cdot B}\leq \norm{A}\norm{B}\]
+\end{enumerate}	
+
+\dem
+
+\textbf{(a):} Verificamos las tres propiedades de una norma. Sean $A,\, B\in\mathcal{M}_{d\times d},\, \lambda\in\R$
+\begin{itemize}
+    \item Identificación del cero: $\norm{A}=0\ssi A=0\in\mathcal{M}_{d\times d}$.
+    
+    \textbf{($\pmi$)} Para cada $x\in\R^d$ con $\norm{x}_1=1$, $\norm{0x}_1=\norm{0}_1=0$ y tomando supremo se concluye.
+    
+    \textbf{($\imp$)} Si $\norm{A}=0$,
+    
+    \begin{align*}
+    \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{Ax}_1=0 &\imp \forall\,x\in\R^d \mbox{ con } \norm{x}_1=1,\, \norm{Ax}_1=0\\
+               &\imp
+                  \forall\,x\in\R^d \mbox{ con } \norm{x}_1=1,\, Ax=0 \in \R^d
+    \end{align*}
+    Lo último dice que necesariamente $A=0\in\mathcal{M}_{d\times d}$, pues en caso contrario, si alguna coordenada $a_{ij}\neq0$, se puede tomar $x=e_j\in\R^d$ que cumple $\norm{x}_1=1$ y $(Ax)_i=\sum_{k=1,\ldots,d}a_{ik}x_k=a_{ij}\neq0$ y el supremo no podría ser 0.
+    
+    \item Ponderación: 
+    \[\norm{\lambda A}=\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{\lambda Ax}_1=\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\vabs{\lambda}\norm{Ax}_1=
+                  \vabs{\lambda}\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{Ax}_1=\vabs{\lambda}\norm{A}\]
+                  
+    \item Desigualdad Triangular: 
+    
+    \begin{align*}
+        \norm{A+B}&=\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{(A+B)x}_1\\
+              &=
+               \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{Ax+Bx}_1\\
+              &\leq
+                \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}(\norm{Ax}_1+\norm{Bx}_1)\\
+              &\leq
+                  \underbrace{\sup_{\substack{x\in\R^d :\\
+                 \norm{x}_1=1}}\norm{Ax}_1}_{\norm{A}}+
+                 \underbrace{\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{Bx}_1}_{\norm{B}}
+    \end{align*}
+\end{itemize}
+Luego, $\norm{\cdot}$ es una norma en $\mathcal{M}_{d\times d}$.
+    
+\textbf{(b):} Sean $A\in\mathcal{M}_{d\times d},\, x\in\R^d$,
+
+\[\norm{Ax}_1=\dfrac{\norm{Ax}_1}{\norm{x}_1}\norm{x}_1={\bigg\lVert\dfrac{Ax}{\norm{x}_1}\bigg\rVert}_1\norm{x}_1={\bigg\lVert A\dfrac{x}{\norm{x}_1}\bigg\rVert}_1\norm{x}_1\leq\sup_{\substack{y\in\R^d :\\
+                  \norm{y}_1=1}}\norm{Ay}_1 \norm{x}_1
+                  =\norm{A}\norm{x}_1\]
+    
+donde utilizamos que ${\bigg\lVert\dfrac{x}{\norm{x}_1}\bigg\rVert}_1=\dfrac{1}{\norm{x_1}}\norm{x_1}=1$.
+
+\textbf{(c):} Sean $A,\, B\in\mathcal{M}_{d\times d}$,
+
+\[\norm{AB}=\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{(AB)x}_1=
+            \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{A(Bx)}_1\underbrace{\leq}_{(b)}
+            \sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{A}\norm{(Bx)}_1=
+            \norm{A}\sup_{\substack{x\in\R^d :\\
+                  \norm{x}_1=1}}\norm{(Bx)}_1=
+            \norm{A}\norm{B} \mbox{ }
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\item Considere $E$ un espacio vectorial normado cualquiera.
+\begin{enumerate}
+    \item Pruebe que $\phi, E$ son conjuntos abiertos.
+    \item Pruebe que si $\{A_i\}_{i\in I}\subseteq E$ es una familia de abiertos, con $I$ una familia de índices cualquiera , entonces el conjunto
+    \[\bigcup_{i\in I}A_i\]
+    también es abierto.
+    \item Pruebe que si $\{A_i\}_{i=1}^n\subseteq E$ es una familia finita de abiertos, entonces el conjunto
+    \[\bigcap_{i=1}^nA_i\]
+    también es abierto.
+\end{enumerate}
+
+\dem
+
+\begin{enumerate}
+    \item Por definición, un conjunto $A$ es abierto si
+    
+    \[\forall x\in A, \exists\, r>0 : B(x,r)\subseteq A.\]
+    
+    Notemos que como $E$ es todo el espacio, cualquier conjunto es subconjunto de él. En particular, para todo $x\in E$ podemos tomar cualquier radio $r$ (por ejemplo $r=1$), y $B(x,r)\subseteq E$. Luego, $E$ es abierto.
+    
+    Supongamos por contradicción que $\phi$ no es abierto, es decir, la negación de lo anterior:
+    
+    \[\exists\, x\in A : \forall\, r>0 : B(x,r)\nsubseteq A.\]
+    
+    Esto último es una contradicción, pues el vacío no tiene ningún elemento. Luego, $\phi$ es abierto.
+    
+    
+    
+    \item Sea $x\in \bigcup_{i\in I}A_i$ cualquiera, entonces (por definición de la unión), $x\in A_j$ para algún $j\in I$. Como, en particular, $A_j$ es abierto, existe $r>0$ tal que $B(x,r)\subseteq A_j$, y por otro lado $A_j\subseteq \bigcup_{i\in I}A_i$. Luego, $B(x,r)\subseteq \bigcup_{i\in I}A_i$. Luego, $\bigcup_{i\in I}A_i$ es abierto.
+    
+    \item Primero notamos que si $\bigcap_{i=1}^nA_i=\phi$, por lo visto en \textbf{(a)}, el conjunto es abierto. Supongamos ahora que la intersección no es vacía: Sea $x\in \bigcap_{i=1}^nA_i$ cualquiera, entonces (por definición de la intersección) $x$ está en todos los $A_i$. Además, como todos los $A_i$ son abiertos podemos ocupar la definición y encontrar un radio respectivo. En términos formales, para cada $i=1,\ldots,n$, como $x\in A_i$, existe $r_i>0$ tal que $B(x,r)\subseteq A_i$. Ahora queremos encontrar una bola con radio suficientemente pequeño para que esté en todos los $A_i$, y así en la intersección: como la cantidad de $r_i$ es finita podemos tomar el más pequeño de ellos $r:=\min_{i=1,\ldots,n}r_i$ (si fueran infinitos habría que tomar ínfimo y éste podría no existir), de modo que
+    \[B(x,r)\subseteq B(x,r_i)\subseteq A_i,\,\forall i=1,\ldots,n\]
+    Concluyendo entonces que $B(x,r)\subseteq \bigcap_{i=1}^nA_i$. Luego, $\bigcap_{i=1}^nA_i$ es abierto.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Estudie la convergencia de la sucesión $(x_n,y_n)_{n\in\N}\subseteq \R^2$, dada por:
+\[(x_n,y_n):=\bigg(\frac{2n^2+(-1)^n}{3n^2},ne^{-n}\sen\bigg(\frac{1}{n}\bigg)\bigg).\]
+
+\dem Recordemos que para sucesiones en varias variables, la convergencia está caracterizada por la convergencia por coordenadas. En este caso, probaremos que el límite de la sucesión en $\R^2$ es $(\frac{2}{3},0)$:
+
+\[x_n=\frac{2n^2+(-1)^nn}{3n^2}=\frac{2}{3}+\underbrace{\frac{1}{3n}}_{nula}\underbrace{(-1)^n}_{acotada}\xrightarrow[n\to\infty]{}\frac{2}{3}\]
+
+\[y_n=ne^{-n}\sen\Big(\frac{1}{n}\Big)=\underbrace{\frac{1}{e^n}}_{\to 0}\underbrace{\bigg(\frac{\sen\big(\frac{1}{n}\big)}{\frac{1}{n}}\bigg)}_{\to 1}\xrightarrow[n\to\infty]{}0\]
+
+donde ocupamos el límite conocido $\lim_{x\to0}\frac{\sen(x)}{x}=1$
+
+
+
+
+\end{enumerate}	
+\end{document}

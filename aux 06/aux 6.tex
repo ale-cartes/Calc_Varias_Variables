@@ -1,0 +1,141 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\conv}[2]{\xrightarrow[#1\to#2]{}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{minipage}{11.5 cm}
+\begin{flushleft}
+\hspace*{-0.6cm}\textbf{MA2001-4 Cálculo en Varias Variables}\\
+\hspace*{-0.6cm}\textbf{Profesor:} Javier Ramírez G.\\
+\hspace*{-0.6cm}\textbf{Auxiliar:} Alejandro Silva C.\\
+
+\end{flushleft}
+\end{minipage}
+
+\begin{picture}(2,3)
+    \put(370,-4){\includegraphics[scale=1.2]{fcfm2.pdf}}
+\end{picture}
+
+\begin{center}
+	\LARGE \bf{Auxiliar \#6: Repaso C1}\\
+\end{center}
+
+\vspace{-1cm}
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+
+\item
+    \begin{enumerate}
+        \item[\textbf{(a.i)}] Dada una norma $\norm{\cdot}$ en $\mathbb{R}^n$ y una matriz $P$ no singular de $n\times n$. Demuestre que la función $N(x)=\norm{Px}$ es también una norma de $\mathbb{R}^n$
+        \item[\textbf{(a.ii)}] Demuestre que en $\mathbb{R}^3$, la función $\displaystyle N_1(x,y,z)=\sqrt{\frac{x^2}{9}+4y^2+16z^2}$ es una norma.
+        \item[\textbf{(b)}] Pruebe que 
+        \[\norm{(x,y)}=\sqrt{x^2+xy+y^2}\]
+        Define una norma en $\mathbb{R}^2$
+    \end{enumerate}
+\item Determine el interior, adherencia y frontera de los siguientes conjuntos:
+    \begin{enumerate}
+        \item $B=\left\{\left(\frac{1}{k},(-1)^k\right)\in\mathbb{R}^2 \text{ : } k\in\mathbb{N} \right\}$
+        \item $C=\left\{ \left(\frac{1}{m},\frac{1}{n}\right) \text{  / } n,m\in\mathbb{N}\right\}$
+    \end{enumerate}
+\item Muestre que
+    \begin{enumerate}
+        \item A es cerrado si y solo si $\fr{(A)}\subseteq A$
+        \item A es abierto si y solo si $A\cap\fr(A)=\emptyset$
+    \end{enumerate}
+\item 
+    \begin{enumerate}
+        \item Considere la función $f:\mathbb{R}^2\rightarrow\mathbb{R}$ definida por:
+        \begin{align*}
+            \displaystyle f(x,y)=\left\{
+                \begin{array}{cl}
+                    \frac{x^2y^2}{x^2y^2+(x-y)^2} &\text{ si } (x,y)\neq(0,0)  \\
+                    1 &\text{ si } (x,y)=(0,0)
+                \end{array}\right.
+        \end{align*}
+            Estudie la continuidad de $f$ en $\mathbb{R}^2$
+        \item Considere la función $g:\left[0,\frac{\pi}{4}\right]\times[0,1]\rightarrow\mathbb{R}$ definida por:
+        \begin{align*}
+            \displaystyle g(x,y)=\left\{
+                \begin{array}{cl}
+                    tan(xy)^{\frac{1}{1-tan(xy)}}&\text{ si } (x,y)\neq\left(\frac{\pi}{4},1\right) \\
+                    \gamma &\text{ si } (x,y)=\left(\frac{\pi}{4},1\right)
+                \end{array}\right.
+        \end{align*}
+        Determine $\gamma$ de tal modo que $g$ sea continua en $\left[0,\frac{\pi}{4}\right]\times[0,1]$
+    \end{enumerate}
+
+\end{enumerate}
+\end{document}

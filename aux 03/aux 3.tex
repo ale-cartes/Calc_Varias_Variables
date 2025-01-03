@@ -1,0 +1,108 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{minipage}{11.5 cm}
+\begin{flushleft}
+\hspace*{-0.6cm}\textbf{MA2001-4 Cálculo en Varias Variables}\\
+\hspace*{-0.6cm}\textbf{Profesor:} Javier Ramírez G.\\
+\hspace*{-0.6cm}\textbf{Auxiliar:} Alejandro Silva C.\\
+
+\end{flushleft}
+\end{minipage}
+
+\begin{picture}(2,3)
+    \put(370,-4){\includegraphics[scale=1.2]{fcfm2.pdf}}
+\end{picture}
+
+\begin{center}
+	\LARGE \bf{Auxiliar \#3}\\
+\end{center}
+
+\vspace{-1cm}
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+
+\item Demostrar que si $A\subseteq \mathbb{R}^n $ es un cerrado o un abierto, entonces $\inte((\fr(A))=\phi$
+
+\item Sea $(a_k)$ y $(b_k)$ dos sucesiones en $\mathbb{R}^n$, tales que $a_k\rightarrow a$ y $a_k+b_k\rightarrow c$. Demuestre  que $(b_k)$ es convergente.
+
+\item Sea $y\in\mathbb{R}^n$ fijo y $r\in\mathbb{R}$. Muestre que el conjunto $A=\{x\in\mathbb{R}^n:\norm{x-y}\geq r\}$ es un conjunto cerrado mediante sucesiones.
+
+\item Sea $E$ un e.v.n de dimensión finita (o $\R^d$ en su defecto) y $F\subseteq E$ un subespacio vectorial generado por el conjunto linealmente independiente $\{x_1,\ldots,x_m\}\subseteq E$, esto es, para cada $y\in F$ existen escalares $\lambda_1,\ldots,\lambda_m$ tal que
+$y=\sum_{i=1}^m\lambda_i x_i $. Demuestre que $F$ es cerrado.
+
+\end{enumerate}	
+\end{document}

@@ -1,0 +1,152 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\conv}[2]{\xrightarrow[#1\to#2]{}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{minipage}{11.5 cm}
+\begin{flushleft}
+\hspace*{-0.6cm}\textbf{MA2001-4 Cálculo en Varias Variables}\\
+\hspace*{-0.6cm}\textbf{Profesor:} Javier Ramírez G.\\
+\hspace*{-0.6cm}\textbf{Auxiliar:} Alejandro Silva C.\\
+
+\end{flushleft}
+\end{minipage}
+
+\begin{picture}(2,3)
+    \put(370,-4){\includegraphics[scale=1.2]{fcfm2.pdf}}
+\end{picture}
+
+\begin{center}
+	\LARGE \bf{Auxiliar \#8 }\\
+\end{center}
+
+\vspace{-1cm}
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+
+\item
+\begin{enumerate}
+    \item Sea $f: \mathbb{R}^n\rightarrow\mathbb{R}$ dada por la forma cuadrática
+    \[f(x)=x^\intercal Ax\]
+    donde $A$ es una matriz de $n\times n$. \par
+    Dado $x_0\in\mathbb{R}^n$ determine que $f$ es diferenciable en $x_0$ y encuentre $f^{\prime}(x_0)$
+    
+    \item Sea $g: \mathbb{R}^n\rightarrow\mathbb{R}$ definida por $g(x)=\norm{x}^2_2$. Determine la matriz $Dg(x)$
+\end{enumerate}
+\item Sea $g:\mathbb{R}^2\rightarrow\mathbb{R}^2$ definida por
+\begin{align*}
+    g(x,y)= 
+    \begin{bmatrix}
+    xy^3+x^2y\\
+    y^2
+    \end{bmatrix}
+\end{align*}
+Pruebe que la matriz 
+\begin{align*}
+    Dg(x,y)=
+    \begin{bmatrix}
+    y^3+2xy & 3xy^2+x^2\\
+    0 & 2y
+    \end{bmatrix}
+\end{align*}
+define el diferencial de $g$ en $(0,1)$, i.e, $Dg(0,1)=g^{\prime}(0,1)$.\par
+\textit{Hint:} Considere la desigualdad $|hk|+h^2\leq2(h^2+k^2)$
+
+\item Sea $f:\mathbb{R}^3\rightarrow\mathbb{R}^2$ una función diferenciable y $g:\mathbb{R}^2\rightarrow\mathbb{R}^2$ definida por:
+\[g(u,v)=f\left(cos(u)+sin(v),sin(u)+cos(v), e^{u-v}\right)\]
+
+\begin{enumerate}
+    \item Note que $g(u,v)$ se puede expresar como $(f \circ h)(u,v)$. Determine la función $h$ y pruebe que la matriz
+    \begin{align*}
+        Dh(u,v)=\begin{bmatrix}
+            -sin(u) & cos(v) \\
+            cos(u) & -sin(v) \\
+            e^{u-v} & -e^{u-v} 
+        \end{bmatrix}
+    \end{align*}
+    define el diferencial de $h$ en $(\frac{\pi}{2},\frac{\pi}{2})$.
+    \item Usando la fórmula del diferencial de la composición de dos funciones y sabiendo que la matriz asociada a $Df(1,1,1)$ es
+    \begin{align*}
+        \begin{bmatrix}
+        1 & 3 & 4 \\
+        2 & -1 & 3
+        \end{bmatrix}
+    \end{align*}
+    Calcule la matriz asociada a $Dg(\frac{\pi}{2},\frac{\pi}{2})$
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

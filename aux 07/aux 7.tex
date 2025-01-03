@@ -1,0 +1,136 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\conv}[2]{\xrightarrow[#1\to#2]{}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{minipage}{11.5 cm}
+\begin{flushleft}
+\hspace*{-0.6cm}\textbf{MA2001-4 Cálculo en Varias Variables}\\
+\hspace*{-0.6cm}\textbf{Profesor:} Javier Ramírez G.\\
+\hspace*{-0.6cm}\textbf{Auxiliar:} Alejandro Silva C.\\
+
+\end{flushleft}
+\end{minipage}
+
+\begin{picture}(2,3)
+    \put(370,-4){\includegraphics[scale=1.2]{fcfm2.pdf}}
+\end{picture}
+
+\begin{center}
+	\LARGE \bf{Auxiliar \#7 }\\
+\end{center}
+
+\vspace{-1cm}
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+
+\item
+\begin{enumerate}
+    \item Pruebe que el siguiente conjunto es compacto:
+\[A=\left\{(x,y,z)\in\mathbb{R}^3\text{   }\bigg{|}\text{ } \frac{x^2}{2}+\frac{y^2}{4}+\frac{z^2}{8}\leq 1\right\}\]
+
+\item Sea $f:\mathbb{R}^2\rightarrow\mathbb{R}$ definida por:
+\begin{align*}
+    \displaystyle
+    f(x,y)=\left\{\begin{array}{cl}
+    \frac{x^3-y^3}{xy}& \text{ si }xy\neq 0  \\
+    0 &\text{ si }xy=0 
+    \end{array}\right.
+\end{align*}
+Pruebe que el conjunto de los puntos de discontinuidad de $f$ es cerrado y determínelo
+\end{enumerate}
+\item Considere la función $f:\mathbb{R}^2\rightarrow\mathbb{R}$ definida por:
+\[f(x,y)=(1-x^2-y^2)e^{5x^2-y^2+cos(3x+y)}\]
+Sea $D=\left\{(x,y)\text{  }\big{|}\text{ } x^2+y^2<1\right\}$. Demuestre que existe un punto $(\bar{x},\bar{y})\in D$ tal que:
+\[f(\bar{x},\bar{y})\geq f(x,y) \text{   } \forall (x,y)\in D \]
+\item 
+\begin{enumerate}
+    \item Demuestre que toda norma es Lipschitz
+    \item Demuestre que la función $f:\mathbb{R}_+\rightarrow\mathbb{R}$ definida por $f(x)=\sqrt{x}$ no es Lipschitz
+\end{enumerate}
+
+\item Sea $A\subseteq\mathbb{R}^n$ un conjunto compacto, y sea $x_0\notin A$ un punto fijo. Se define $f: A\rightarrow R$ como:
+\[f(x)=\norm{x-x_0}\]
+    \begin{enumerate}
+        \item Demuestre que $f$ es una función continua
+        \item Pruebe que $f$ alcanza máximo y mínimo sobre $A$
+        \item Muestre que $\underset{x\in A}{\min}f(x)>0$
+        \item Dada una constante $c>0$, tal que $\underset{x\in A}{\min}f(x)<c<\underset{x\in A}{\max}f(x)$, consideremos el conjunto
+        \[A(c)=\left\{x\in A \text{ : } f(x)<c\right\}\]
+        ¿Es $A(c)$ un conjunto abierto?
+    \end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,119 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\conv}[2]{\xrightarrow[#1\to#2]{}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+\end{enumerate}
+\begin{enumerate}
+
+\item[\textbf{P3.e)}] Ejemplo de cálculo de límite (equivalente a la continuidad de la función en $(0,0)$):
+\[\lim_{(x,y)\to(0,0)} \frac{xy\sen(x)}{x^2+y^2}\]
+\dem Ocupemos sándwich para concluir el límite de funciones:
+\begin{align*}
+    0&\leq\left\lvert\frac{xy\sen(x)}{x^2+y^2}\right\rvert\\
+    &\leq\frac{\vabs{x}\vabs{y}\vabs{\sen(x)}}{x^2+y^2}\\
+    &\leq\frac{\vabs{x}\vabs{y}\vabs{\sen(x)}}{2\vabs{x}\vabs{y}}\\
+    &=\frac{\vabs{\sen(x)}}{2}\conv{(x,y)}{(0,0)}0
+\end{align*}
+donde utilizamos que $x^2+y^2\geq2\vabs{x}\vabs{y}$. Recordamos que por la P1 no es necesario preocuparnos por el caso en que $(x,y)=(0,0)$, donde la fracción quedaría indefinida. Sin embargo, al utilizar la cota antes mencionada en la tercera desigualdad, estamos entrando en la misma situación: si $x=0$ o $y=0$ (si nos acercamos por los ejes), la fracción resultante de la desigualdad está indefinida. Uno podría decir que esto no es problema, pues si nos acercamos por los ejes la función vale siempre cero (y no se indefine por la P5), pero con eso la conclusión ya no es tan clara: Tendríamos que
+\begin{itemize}
+    \item Si nos acercamos por los ejes ($x=0$ o $y=0$), entonces el límite es cero.
+    \item En cualquier otro caso, el desarrollo del principio es válido, por lo que el límite también es cero
+\end{itemize}
+¿Es suficiente lo anterior para concluir que el límite es cero? ¿Cómo se representa formalmente la idea de acercarse por los ejes?
+Para responder lo último, la idea es ocupar la definición de continuidad por sucesiones: Sea $((x_n,y_n))_n\subseteq\R^2\setminus\{(0,0)\}$ convergente a $(0,0)$, si $x_n=0$ para cada $n\in\N$ tenemos por el primer punto que el límite de la función es cero, y lo mismo si $y_n=0$ para cada $n$. Además, si $x_n\neq0$ y $y_n\neq0$ para cada $n$, por el segundo punto, el límite también es cero. ¿Qué pasa con la sucesiones que no cumplen ninguno de los casos anteriores, es decir, que alternan entre los ejes y el espacio fuera de ellos? La verdad es que también se puede demostrar que el límite es cero, pero hay que entrar a tomar subsucesiones y subsubsucesiones que es algo que deja a cualquiera mareado.\\
+
+Para evitar todo lo anterior se puede razonar de varias maneras(válido tomando sucesiones o por límite de funciones):
+\begin{enumerate}
+    \item \textbf{[Saltarse la desigualdad]} Si hay una desigualdad como la anterior que tiene sus detalles, uno puede buscar una cota más grande de modo que sea siempre cierta y luego explicar por qué funciona. En este caso notemos que la desigualdad 
+    \[\frac{\vabs{x}\vabs{y}\vabs{\sen(x)}}{x^2+y^2}\leq\frac{\vabs{\sen(x)}}{2}\]
+    es siempre cierta por todo lo discutido anteriormente, por lo que se puede hacer el desarrollo con esta última desigualdad, analizando los casos de manera aparte.
+    \item \textbf{[Acotar por arriba]}
+    En casos como este en que la desigualdad $x^2+y^2\geq2\vabs{x}\vabs{y}$ también se puede aplicar en el numerador ocupar que
+    \[\frac{\vabs{x}\vabs{y}\vabs{\sen(x)}}{x^2+y^2}\leq\frac{\left(\frac{x^2+y^2}{2}\right)\vabs{\sen(x)}}{x^2+y^2}=\frac{\vabs{\sen(x)}}{2}\]
+    evita los problemas anteriores.
+    \item \textbf{[Parafrasear la desigualdad]} Similar a lo anterior, uno puede manipular alguna desigualdad que quiere ocupar de manera que sea "llegar y aplicar". En este caso notemos que $x^2+y^2\geq2\vabs{x}\vabs{y}$ se puede reescribir 
+    \[\frac{\vabs{x}\vabs{y}}{x^2+y^2}\leq\frac{1}{2}\]
+    con lo cual se puede recuperar la desigualdad de $\textbf{(a)}$ y concluir similarmente.
+    \item \textbf{[Ocupar otra desigualdad]} En este caso, como $\vabs{x}=\sqrt{x^2}\leq\sqrt{x^2+y^2}$ y análogamente $\vabs{y}\leq\sqrt{x^2+y^2}$, tenemos que
+    \[\frac{\vabs{x}\vabs{y}\vabs{\sen(x)}}{x^2+y^2}\leq\frac{\sqrt{x^2+y^2}\sqrt{x^2+y^2}\vabs{\sen(x)}}{x^2+y^2}=\frac{\vabs{\sen(x)}}{2}\]
+\end{enumerate}
+
+La verdad es que todas las ideas anteriores son más bien análogas, y deben haber muchas más formas de hacer esto. Lo importante es hacer notar a los y las estudiantes que el desarrollo que discutimos al principio trae problemas, lo cual puede repercutir en errores que les cuesten décimas en controles, pero que se pueden evitar poniendo un poco más de ojo, y teniendo a mano más herramientas útiles, las cuales finalmente se ganan haciendo ejercicios.
+\end{enumerate}
+\end{document}

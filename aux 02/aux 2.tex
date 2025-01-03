@@ -1,0 +1,130 @@
+\documentclass[letterpaper,11pt]{article}
+\oddsidemargin -1.0cm \textwidth 17.4cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage{amsfonts,setspace}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm, bottom=2cm]{geometry}
+\setlength\headheight{2em} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+\renewcommand{\labelenumi}{\normalsize\bfseries P\arabic{enumi}.}
+\renewcommand{\labelenumii}{\normalsize\bfseries (\alph{enumii})}
+\renewcommand{\labelenumiii}{\normalsize\bfseries \roman{enumiii})}
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\rec}{Rec}
+\DeclareMathOperator{\inte}{Int}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\fr}{Fr}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\argmin}{\text{argmín}}
+\let\lim=\undefined\DeclareMathOperator*{\lim}{\text{lím}}
+\let\max=\undefined\DeclareMathOperator*{\max}{\text{máx}}
+\let\min=\undefined\DeclareMathOperator*{\min}{\text{mín}}
+\let\inf=\undefined\DeclareMathOperator*{\inf}{\text{ínf}}
+
+
+\newcommand{\pint}[2]{\left< #1,#2\right>}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\pmi}{\Longleftarrow}
+\newcommand{\ipartial}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\ider}[2]{\dfrac{d #1}{d #2}}
+\newcommand{\iipartial}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\iider}[2]{\dfrac{d^2 #1}{d #2^2}}
+\newcommand{\ijpartial}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\sol}{\textbf{\emph{Soluci\'on: }}}
+\newcommand{\dem}{\textbf{\emph{Demostraci\'on: }}}
+\newcommand{\aux}[4]{\Large \textbf{Clase Auxiliar N#1: #2}}
+\newcommand{\pauta}[4]{\Large \textbf{Pauta #1 N#2}}
+\newcommand{\enc}[3]{\Large \textbf{#1}}
+\newcommand{\norm}[1]{\lVert #1\rVert }
+\newcommand{\vabs}[1]{\lvert #1\rvert}
+
+\begin{document}
+
+\fancyhead[L]{\itshape{Facultad de Ciencias F\'isicas y Matem\'aticas}}
+\fancyhead[R]{\itshape{Universidad de Chile}}
+
+\begin{minipage}{11.5 cm}
+\begin{flushleft}
+\hspace*{-0.6cm}\textbf{MA2001-4 Cálculo en Varias Variables}\\
+\hspace*{-0.6cm}\textbf{Profesor:} Javier Ramírez G.\\
+\hspace*{-0.6cm}\textbf{Auxiliar:} Alejandro Silva C.\\
+
+\end{flushleft}
+\end{minipage}
+
+\begin{picture}(2,3)
+    \put(370,-4){\includegraphics[scale=1.2]{fcfm2.pdf}}
+\end{picture}
+
+\begin{center}
+	\LARGE \bf{Auxiliar \#2}\\
+\end{center}
+
+\vspace{-1cm}
+\begin{enumerate}\setlength{\itemsep}{0.4cm}	
+\item[]
+
+
+\item Sean $A, B$ subconjuntos de $\R^d$. Demuestre las siguientes propiedades:
+\begin{enumerate}
+    \item $\inte(A)\cup\inte(B) \subseteq \inte(A\cup B)$
+    \item $\adh(A\cap B) \subseteq \adh(A)\cap\adh(B)$
+    \item $\inte(A\cap B)=\inte(A)\cap \inte(B)$ 
+    \item $\adh(A\cup B)=\adh(A)\cup\adh(B)$
+    \item $\inte(A)=\phi$, si $A$ es numerable.
+    
+\end{enumerate}
+
+\item Encuentre el interior, adherencia y frontera para los siguientes conjuntos. Determine si son abiertos/cerrados.
+
+\begin{enumerate}
+    \item $B$ = $\{  x\in \R^{n} : \norm{x}  > 2     \} \cup \R^n   $
+    
+    \item $ C =\{(x,y)\in\R^2:1\leq x^2 + y^2 \leq 2\}\cup\left\{ (x,y) \in \R^2: y=\frac{1}{x},x\in\{1,2,3,4,5\}\right\}$
+\end{enumerate}
+
+\item Sea la sucesión $(x_n, y_n)_{n\in \mathbb{N}} \subseteq \mathbb{R}^2$ definida por
+
+$$\forall n \in \mathbb{N}, \quad (x_n, y_n) := \left( \frac{u_n(\cos(v_n)-1)}{u_n^2 + v_n^2}, \frac{2u_n^\alpha + v_n^4}{|u_n|+3|v_n|} \right);$$
+
+con $(u_n)_{n\in \mathbb{N}}, (v_n)_{n\in \mathbb{N}}$ sucesiones reales tales que $\lim_{n \to \infty} u_n = \lim_{n \to \infty} v_n = 0$ y $\alpha \in \mathbb{R}$.
+    
+    
+    \begin{enumerate}
+    \item Muestre que $(x_n,y_n)_{n\in \mathbb{N}}$ converge cuando $\alpha = 2$ e indique su límite.
+    \item ¿Qué pasa si $\alpha =1$?
+    \end{enumerate}
+
+\end{enumerate}	
+\end{document}
